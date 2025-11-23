@@ -1,13 +1,27 @@
 import express from "express";
 import cors from "cors";
-import foodrouter from "./routers/foodroute.js";
+
 import "dotenv/config";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+
+//router becuase of error
+import upload from "./middleware/upload.js"
+import { analyzeFood } from "./controller/analyze.js";
+const foodrouter = express.Router();
+
+foodrouter.post("/", upload.single("image"), analyzeFood);
 app.use("/analyze", foodrouter);
+
+
+
+
+
+
 
 app.get("/", (req, res) => {
   res.send({ msg: "Hey mate ! Backend Running!" });
