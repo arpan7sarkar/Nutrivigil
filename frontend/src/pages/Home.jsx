@@ -100,8 +100,8 @@ function Home() {
           {[
             {
               icon: <Camera size={32} className="text-indigo-400" />,
-              title: "1. Snap Photo",
-              desc: "Take a picture of your food",
+              title: "1. Upload Photo",
+              desc: "Take a picture of your food and upload to the app",
             },
             {
               icon: <Brain size={32} className="text-indigo-400" />,
